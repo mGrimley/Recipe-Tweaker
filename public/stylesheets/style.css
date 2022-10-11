@@ -1,28 +1,55 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-body > nav {
-  grid-area: nav;
-  background-color: lightseagreen;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
+:root {
+  --title-card-height: 150px;
+  --recipe-card-height: 100px;
 }
 
 button {
-  background-color: seagreen;
+  background-color: rgb(36, 174, 159);
   color: white
 }
 
 .add-recipe {
   object-fit: contain;
   margin-right: auto;
-  background-color: red;
+  background-color: rgb(210, 69, 92);
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(150, 196, 235);
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: rgb(143, 215, 207);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  gap: 5px
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.title-card {
+  background-color: rgb(145, 188, 179);
+  color: white;
+
+  border-radius: calc(var(--title-card-height) / 2);
+  padding: 10px 25px;
+  font-size: 50px;
+}
+
+.recipe-card {
+  background-color: rgb(143, 215, 207);
+  color: white;
+
+  border-radius: calc(var(--title-card-height) / 2);
+  padding: 10px 200px;
+  font-size: 50px;
 }
