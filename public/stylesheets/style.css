@@ -9,11 +9,16 @@ a {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: lightseagreen;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 10px;
+}
+
+button {
+  background-color: seagreen;
+  color: white
 }
 
 .add-recipe {
