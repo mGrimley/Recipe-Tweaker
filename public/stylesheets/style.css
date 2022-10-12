@@ -3,9 +3,33 @@
   --recipe-card-height: 100px;
 }
 
-button {
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(150, 196, 235);
+}
+
+body > nav {
+  border-radius: .5rem;
+  grid-area: nav;
+  background-color: rgb(143, 215, 207);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  gap: 10px
+}
+
+.button {
   background-color: rgb(36, 174, 159);
-  color: white
+  color: white;
+  text-decoration: none;
+  border-radius: .25rem;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: rgba(36, 174, 158, 0.5);
 }
 
 .add-recipe {
@@ -14,19 +38,8 @@ button {
   background-color: rgb(210, 69, 92);
 }
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(150, 196, 235);
-}
-
-body > nav {
-  grid-area: nav;
-  background-color: rgb(143, 215, 207);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  gap: 5px
+.add-recipe:hover {
+  background-color: rgba(210, 69, 93, 0.5);
 }
 
 .container {
@@ -52,4 +65,10 @@ body > nav {
   border-radius: calc(var(--title-card-height) / 2);
   padding: 10px 200px;
   font-size: 50px;
+
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  background-color: rgb(164, 216, 210);
 }
