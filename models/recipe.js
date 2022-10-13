@@ -2,10 +2,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const tweaksSchema = new Schema({
-    userId: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
+        required: true,
     },
+    username: String,
+    userAvatar: String,
     prepTime: {
         type: Number,
         min: 0,
@@ -22,10 +25,13 @@ const tweaksSchema = new Schema({
 })
 
 const recipeSchema = new Schema({
-    userId: {
+    user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
+        required: true,
     },
+    username: String,
+    userAvatar: String,
     title: {
         type: String,
     },

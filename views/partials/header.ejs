@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,17 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
 </head>
+
 <body>
   <nav>
     <% if(user) { %>
-      <a href="/new" class="add-recipe button <%- title === 'Add Recipe' ? 'active' : '' %>">Add Recipe</a>
-      <a href="/recipes" class="button <%- title === 'All Recipes' ? 'active' : '' %>">All Recipes</a>
-      <a href="/" class="button<%- title === 'My Recipes' ? ' active' : '' %>">My Recipes</a>
-      <a href="/logout" class="button">Log Out</a>
+      <a href="/recipes/new" class="add-recipe-btn btn<%- title === 'Add Recipe' ? 'active' : '' %>">Add Recipe</a>
+      <a href="/recipes" class="btn <%- title === 'All Recipes' ? 'active' : '' %>">All Recipes</a>
+      <a href="/" class="btn<%- title === 'My Recipes' ? ' active' : '' %>">My Recipes</a>
+      <a href="/logout" class="btn">Log Out</a>
     <% } else { %>
-      <a href="/auth/google" class="add-recipe button">Add Recipe</a>
-      <a href="/auth/google" class="button">Log In</a>
+      <a href="/auth/google" class="add-recipe-btn btn">Add Recipe</a>
+      <a href="/auth/google" class="btn">Log In</a>
     <% } %>
   </nav>
   

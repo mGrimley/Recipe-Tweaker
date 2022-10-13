@@ -1,50 +1,66 @@
 :root {
   --title-card-height: 150px;
   --recipe-card-height: 100px;
+
+  --main-bg: rgb(150, 196, 235);
+  --header-bg: rgb(143, 215, 207);
+  --add-recipe-btn-bg: rgb(210, 69, 92);
+  --btn-bg: rgb(36, 174, 159);
+  --btn-border-border: 2px;
+  --recipe-bg: rgb(143, 215, 207);
 }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(150, 196, 235);
+  background-color: var(--main-bg);
 }
 
 body > nav {
   border-radius: .5rem;
   grid-area: nav;
-  background-color: rgb(143, 215, 207);
+  background-color: var(--header-bg);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
-  gap: 10px
+  gap: 10px;
 }
 
-.button {
-  background-color: rgb(36, 174, 159);
+.btn {
+  background-color: var(--btn-bg);
   color: white;
   text-decoration: none;
+
+  border: solid var(--btn-border-border) var(--btn-bg);
   border-radius: .25rem;
+
   padding: .5rem 1rem;
   text-align: center;
 }
 
-.button:hover {
-  background-color: rgba(36, 174, 158, 0.5);
+.btn:hover {
+  opacity: .5;
+  border: solid 2px;
 }
 
-.add-recipe {
+.btn.active:hover {
+  border: solid 2px;
+}
+
+.add-recipe-btn {
   object-fit: contain;
   margin-right: auto;
-  background-color: rgb(210, 69, 92);
+  background-color: var(--add-recipe-btn-bg);
+  border-color: var(--add-recipe-btn-bg);
 }
 
-.add-recipe:hover {
-  background-color: rgba(210, 69, 93, 0.5);
+.add-recipe-btn:hover {
+  opacity: .5;
 }
 
 .active {
   /* box-sizing: border-box; */
-  border: solid 2px;
+  border: solid var(--btn-border-border);
 }
 
 .container {
@@ -64,9 +80,8 @@ body > nav {
 }
 
 .recipe-card {
-  background-color: rgb(143, 215, 207);
+  background-color: var(--recipe-bg);
   color: white;
-
   border-radius: calc(var(--title-card-height) / 2);
   padding: 10px 200px;
   font-size: 50px;
