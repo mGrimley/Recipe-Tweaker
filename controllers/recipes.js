@@ -12,5 +12,5 @@ function index(req, res) {
 }
 
 function newRecipe(req, res) {
-    res.render('recipes/new', {title: 'New Recipe'})
+    res.render('recipes/new', {title: 'Add Recipe'})
 }

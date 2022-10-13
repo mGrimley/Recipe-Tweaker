@@ -7,6 +7,7 @@
   --add-recipe-btn-bg: rgb(210, 69, 92);
   --btn-bg: rgb(36, 174, 159);
   --btn-border-border: 2px;
+  --title-card-bg: rgb(145, 188, 179);
   --recipe-bg: rgb(143, 215, 207);
 }
 
@@ -59,19 +60,30 @@ body > nav {
 }
 
 .active {
-  /* box-sizing: border-box; */
   border: solid var(--btn-border-border);
 }
 
-.container {
+.flex-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 100px 150px 1fr;
+  grid-template-rows: 100px 1fr 1fr;
+  grid-template-areas: 
+    ". title title ."
+    ". add-recipe add-recipe ."
+    ". submit submit .";
+}
+
 .title-card {
-  background-color: rgb(145, 188, 179);
+  grid-area: title;
+
+  background-color: var(--title-card-bg);
   color: white;
 
   border-radius: calc(var(--title-card-height) / 2);
@@ -90,5 +102,5 @@ body > nav {
 }
 
 .recipe-card:hover {
-  background-color: rgb(164, 216, 210);
+  opacity: .75;
 }
