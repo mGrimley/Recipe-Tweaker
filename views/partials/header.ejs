@@ -9,11 +9,15 @@
 </head>
 <body>
   <nav>
-    <a href="/new" class="add-recipe button">Add Recipe</a>
-    <a href="/" class="button">All Recipes</a>
-    <a href="/" class="button">My Recipes</a>
-    <a href="/" class="button">Saved Recipes</a>
-    <a href="/" class="button">Log In</a>
+    <% if(user) { %>
+      <a href="/new" class="add-recipe button <%- title === 'Add Recipe' ? 'active' : '' %>">Add Recipe</a>
+      <a href="/recipes" class="button <%- title === 'All Recipes' ? 'active' : '' %>">All Recipes</a>
+      <a href="/" class="button<%- title === 'My Recipes' ? ' active' : '' %>">My Recipes</a>
+      <a href="/logout" class="button">Log Out</a>
+    <% } else { %>
+      <a href="/auth/google" class="add-recipe button">Add Recipe</a>
+      <a href="/auth/google" class="button">Log In</a>
+    <% } %>
   </nav>
   
   <main>

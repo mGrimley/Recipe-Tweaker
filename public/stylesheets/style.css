@@ -42,6 +42,11 @@ body > nav {
   background-color: rgba(210, 69, 93, 0.5);
 }
 
+.active {
+  /* box-sizing: border-box; */
+  border: solid 2px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
