@@ -81,8 +81,6 @@ body > nav {
 }
 
 .title-card {
-  grid-area: title;
-
   background-color: var(--title-card-bg);
   color: white;
 
@@ -114,4 +112,13 @@ body > nav {
 .recipe-card {
   background-color: var(--recipe-bg);
   color: white;
+}
+
+.tweak-card {
+  background-color: var(--title-card-bg);
+  color: white;
+
+  border-radius: calc(var(--title-card-height) / 2);
+  padding: 10px 25px;
+  font-size: 30px;
 }

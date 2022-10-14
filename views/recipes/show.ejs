@@ -5,8 +5,8 @@
   <div>Main Category: <%= recipe.mainCategory %></div>
   <div>Prep Time: <%= recipe.prepTime %> minute<%- recipe.prepTime !== 1 ? 's' : '' %></div>
   <div>Cook Time: <%= recipe.cookTime %> minute<%- recipe.cookTime !== 1 ? 's' : '' %></div>
-  <div>Ingredients: <%= recipe.ingredients %></div>
-  <div>Steps: <%= recipe.steps %></div>
+  <div>Ingredients: <%= recipe.ingredients.join(', ') %></div>
+  <div>Steps: <%= recipe.steps.join(', ') %></div>
   <% if(user && user._id.equals(recipe.user)) { %>
     <div>
       <form action="/recipes/<%= recipe._id %>/edit" method="GET">
@@ -17,6 +17,31 @@
         <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
             <button type="submit" class="btn">Delete Recipe</button>
         </form>
+    </div>
+  <% } %>
+  <div>
+    <h1 class="tweak-card">Tweaks</h1>
+  </div>
+  <!-- Display tweaks, if any -->
+  <% if(recipe.tweaks.length) { %>
+    <% recipe.tweaks.forEach(function(t) { %>
+      <div>
+        <img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" ><%= t.userName %>
+        <div><%= t.comment %></div>
+      </div>
+    <% }) %>
+  <% } %>
+
+  <!-- Add a tweak -->
+  <% if(user){ %>
+    <div>
+      <form method="POST" action="/recipes/<%= recipe._id %>/tweaks">
+        <div>
+          <label>Tweak</label>
+          <input type="text" name="comment" placeholder="Your tweak here...">
+          <input type="submit" value="Add Tweak" class="btn">
+        </div>
+      </form>
     </div>
   <% } %>
 </div>

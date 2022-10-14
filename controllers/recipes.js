@@ -34,8 +34,6 @@ function create(req, res) {
     recipe.steps = recipe.steps[0].split(/\s*, \s*/);
     recipe.ingredients = recipe.ingredients[0].split(/\s*, \s*/);
     
-    console.log(recipe)
-    
     recipe.save(function(err) {
         if(err) {
             console.log(err)
