@@ -12,7 +12,7 @@
 <body>
   <nav>
     <% if(user) { %>
-      <a href="/recipes/new" class="add-recipe-btn btn<%- title === 'Add Recipe' ? 'active' : '' %>">Add Recipe</a>
+      <a href="/recipes/new" class="add-recipe-btn btn <%- title === 'Add Recipe' ? 'active' : '' %>">Add Recipe</a>
       <a href="/recipes" class="btn <%- title === 'All Recipes' ? 'active' : '' %>">All Recipes</a>
       <a href="/" class="btn<%- title === 'My Recipes' ? ' active' : '' %>">My Recipes</a>
       <a href="/logout" class="btn">Log Out</a>

@@ -1,11 +1,53 @@
 <%- include('../partials/header') %>
 
-<div class="add-recipe-container">
+<div class="flex-container">
   <h1 class="title-card"><%= title %></h1>
-  <div class="recipe-card">test</div>
-  <div class="recipe-card">test</div>
-  <div class="recipe-card">test</div>
-  <div class="recipe-card">test</div>
+
+  <form class="add-recipe-form" action="/recipes" method="POST">
+    <div class="flex-container">
+      <div>
+        <label>Title</label>
+        <input type="text" name="title" placeholder="Title">
+      </div>
+  
+      <div>
+        <label>Main Category</label>
+        <select name="mainCategory">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Second Breakfast">Second Breakfast</option>
+          <option value="Elevensies">Elevensies</option>
+          <option value="Luncheon">Luncheon</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Supper">Supper</option>
+        </select>
+      </div>
+      
+      <div>
+        <label>Prep Time</label>
+        <input type="number" name="prepTime" placeholder=0>
+      </div>
+      
+      <div>
+        <label>Cook Time</label>
+        <input type="number" name="cookTime" placeholder=0>
+      </div>
+      
+      <div>
+        <label>Ingredients</label>
+        <input type="text" name="ingriedients" placeholder="Ingredients">
+      </div>
+      
+      <div>
+        <label></label>Steps</label>
+        <input type="text" name="steps" placeholder="Steps">
+      </div>
+      
+      <div>
+        <input type="submit" value="Add Recipe" class="add-recipe-btn btn">
+      </div>
+
+    </div>
+  </form>
 </div>
   
 <%- include('../partials/footer') %>

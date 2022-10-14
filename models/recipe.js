@@ -17,8 +17,8 @@ const tweaksSchema = new Schema({
         type: Number,
         min: 0,
     },
-    ingredients: [String],
-    steps: [String],
+    ingredients: String,
+    steps: String,
     comment: String,
 }, {
     timestamps: true,
@@ -37,7 +37,7 @@ const recipeSchema = new Schema({
     },
     mainCategory: {
         type: String,
-        enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Drink']
+        enum: ['Breakfast', 'Second Breakfast', 'Luncheon', 'Dinner', 'Supper']
     },
     prepTime: {
         type: Number,
@@ -47,8 +47,8 @@ const recipeSchema = new Schema({
         type: Number,
         min: 0,
     },
-    ingredients: [String],
-    steps: [String],
+    ingredients: String,
+    steps: String,
     tweaks: [tweaksSchema],
 }, {
     timestamps: true,

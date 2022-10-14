@@ -6,7 +6,7 @@
   --header-bg: rgb(143, 215, 207);
   --add-recipe-btn-bg: rgb(210, 69, 92);
   --btn-bg: rgb(36, 174, 159);
-  --btn-border-border: 2px;
+  --btn-border-width: 2px;
   --title-card-bg: rgb(145, 188, 179);
   --recipe-bg: rgb(143, 215, 207);
 }
@@ -32,11 +32,21 @@ body > nav {
   color: white;
   text-decoration: none;
 
-  border: solid var(--btn-border-border) var(--btn-bg);
+  border: solid var(--btn-border-width) var(--btn-bg);
   border-radius: .25rem;
 
   padding: .5rem 1rem;
   text-align: center;
+}
+
+.round-btn {
+  background-color: white;
+  border: solid gray var(--btn-border-width);
+  border-radius: 50%;
+}
+
+.round-btn:hover {
+  opacity: .5;
 }
 
 .btn:hover {
@@ -60,7 +70,7 @@ body > nav {
 }
 
 .active {
-  border: solid var(--btn-border-border);
+  border: solid var(--btn-border-width);
 }
 
 .flex-container {
@@ -103,4 +113,15 @@ body > nav {
 
 .recipe-card:hover {
   opacity: .75;
+}
+
+.add-recipe-form {
+  color: white;
+  display: grid;
+  padding: 20px;
+  background-color: var(--recipe-bg);
+}
+
+.add-recipe-form .flex-container {
+
 }
