@@ -3,8 +3,8 @@
 <div class="flex-container">
   <h1 class="title-card"><%= title %></h1>
   <% recipes.forEach(function(r) { %>
-    <div class="recipe-card"><%= r.title %></div>
+    <a href="/recipes/<%= r._id %>" class="recipe-preview"><%= r.title %></a>
   <% }) %>
 </div>
-  
+
 <%- include('../partials/footer') %>

@@ -4,6 +4,7 @@ module.exports = {
     index,
     new: newRecipe,
     create,
+    show,
 }
 
 function index(req, res) {
@@ -23,8 +24,6 @@ function create(req, res) {
     recipe.userName = req.user.name
     recipe.userAvatar = req.user.avatar
 
-    console.log(recipe)
-
     recipe.title = recipe.title.trim();
     recipe.steps[0] = recipe.steps[0].trim();
     recipe.ingredients[0] = recipe.ingredients[0].trim();
@@ -32,11 +31,19 @@ function create(req, res) {
     recipe.steps = recipe.steps[0].split(/\s*, \s*/);
     recipe.ingredients = recipe.ingredients[0].split(/\s*, \s*/);
     
+    console.log(recipe)
+    
     recipe.save(function(err) {
         if(err) {
             console.log(err)
             return res.redirect('/recipes/new');
         }
-        res.redirect('/recipes'); // Show the recipe instead of returning to the All Recipes page. Gotta implement 'Show' functionality first :(
+        res.redirect(`/recipes/${recipe.id}`);
     });
 };
+
+function show(req, res) {
+    Recipe.findById(req.params.id, function(err, recipe) {
+        res.render('recipes/show', {title: recipe.title, recipe})
+    })
+}

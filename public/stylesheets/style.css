@@ -80,16 +80,6 @@ body > nav {
   align-items: center;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 100px 150px 1fr;
-  grid-template-rows: 100px 1fr 1fr;
-  grid-template-areas: 
-    ". title title ."
-    ". add-recipe add-recipe ."
-    ". submit submit .";
-}
-
 .title-card {
   grid-area: title;
 
@@ -101,17 +91,16 @@ body > nav {
   font-size: 50px;
 }
 
-.recipe-card {
+.recipe-preview {
   background-color: var(--recipe-bg);
   color: white;
-  border-radius: calc(var(--title-card-height) / 2);
-  padding: 10px 200px;
+  border-radius: calc(var(--recipe-card-height) / 2);
+  padding: 10px 150px;
+  text-decoration: none;
   font-size: 50px;
-
-  cursor: pointer;
 }
 
-.recipe-card:hover {
+.recipe-preview:hover {
   opacity: .75;
 }
 
@@ -122,6 +111,7 @@ body > nav {
   background-color: var(--recipe-bg);
 }
 
-.add-recipe-form .flex-container {
-
+.recipe-card {
+  background-color: var(--recipe-bg);
+  color: white;
 }

@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<div class="flex-container">
+  <h1 class="title-card"><%= recipe.title %></h1>
+  <div>Main Category: <%= recipe.mainCategory %></div>
+  <div>Prep Time: <%= recipe.prepTime %> minute<% if(parseInt(recipe.prepTime) > 1) {'s'} %></div>
+  <div>Cook Time: <%= recipe.cookTime %> minute<% if(recipe.cookTime > 1) {'s'} %></div>
+  <div>Ingredients: <%= recipe.ingredients %></div>
+  <div>Steps: <%= recipe.steps %></div>
+</div>
+
+<%- include('../partials/footer') %>
