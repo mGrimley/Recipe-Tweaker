@@ -104,7 +104,7 @@ body > nav {
   opacity: .75;
 }
 
-.add-recipe-form {
+.recipe-form {
   color: white;
   display: grid;
   padding: 20px;

@@ -3,11 +3,11 @@
 <div class="flex-container">
   <h1 class="title-card"><%= title %></h1>
 
-  <form class="recipe-form" action="/recipes" method="POST">
+  <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
     <div class="flex-container">
       <div>
         <label>Title</label>
-        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="title" value="<%= recipe.title %>">
       </div>
   
       <div>
@@ -24,26 +24,26 @@
       
       <div>
         <label>Prep Time</label>
-        <input type="number" name="prepTime" placeholder=0>
+        <input type="number" name="prepTime" value="<%= recipe.prepTime %>">
       </div>
       
       <div>
         <label>Cook Time</label>
-        <input type="number" name="cookTime" placeholder=0>
+        <input type="number" name="cookTime" value="<%= recipe.cookTime %>">
       </div>
       
       <div>
         <label>Ingredients</label>
-        <input type="text" name="ingredients" placeholder="Ingredients">
+        <input type="text" name="ingredients" value="<%= recipe.ingredients.join(', ') %>">
       </div>
       
       <div>
         <label></label>Steps</label>
-        <input type="text" name="steps" placeholder="Steps">
+        <input type="text" name="steps" value="<%= recipe.steps.join(', ') %>">
       </div>
       
       <div>
-        <input type="submit" value="Add Recipe" class="add-recipe-btn btn">
+        <input type="submit" value="Resubmit Recipe" class="btn">
       </div>
 
     </div>

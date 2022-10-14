@@ -3,14 +3,19 @@
 <div class="flex-container">
   <h1 class="title-card"><%= recipe.title %></h1>
   <div>Main Category: <%= recipe.mainCategory %></div>
-  <div>Prep Time: <%= recipe.prepTime %> minute<% if(parseInt(recipe.prepTime) > 1) {'s'} %></div>
-  <div>Cook Time: <%= recipe.cookTime %> minute<% if(recipe.cookTime > 1) {'s'} %></div>
+  <div>Prep Time: <%= recipe.prepTime %> minute<%- recipe.prepTime !== 1 ? 's' : '' %></div>
+  <div>Cook Time: <%= recipe.cookTime %> minute<%- recipe.cookTime !== 1 ? 's' : '' %></div>
   <div>Ingredients: <%= recipe.ingredients %></div>
   <div>Steps: <%= recipe.steps %></div>
   <% if(user && user._id.equals(recipe.user)) { %>
     <div>
+      <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+          <button class="btn">Edit Recipe</button>
+      </form>
+    </div>
+    <div>
         <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete Recipe</button>
+            <button type="submit" class="btn">Delete Recipe</button>
         </form>
     </div>
   <% } %>
