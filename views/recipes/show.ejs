@@ -14,15 +14,15 @@
       </form>
     </div>
     <div>
-        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <button type="submit" class="btn">Delete Recipe</button>
-        </form>
+      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+          <button type="submit" class="btn">Delete Recipe</button>
+      </form>
     </div>
   <% } %>
-  <div>
+  <!-- <div>
     <h1 class="tweak-card">Tweaks</h1>
   </div>
-  <!-- Display tweaks, if any -->
+  <!-- Display tweaks, if any --
   <% if(recipe.tweaks.length) { %>
     <% recipe.tweaks.forEach(function(t) { %>
       <div>
@@ -32,7 +32,7 @@
     <% }) %>
   <% } %>
 
-  <!-- Add a tweak -->
+  <!-- Add a tweak --
   <% if(user){ %>
     <div>
       <form method="POST" action="/recipes/<%= recipe._id %>/tweaks">
@@ -43,7 +43,7 @@
         </div>
       </form>
     </div>
-  <% } %>
+  <% } %> -->
 </div>
 
 <%- include('../partials/footer') %>
