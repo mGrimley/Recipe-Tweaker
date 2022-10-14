@@ -33,7 +33,7 @@
       </div>
       <% } %>
     <div>
-      <h1>Posted by <%= recipe.userName %></h1>
+      <h1 class="user">Posted by <%= recipe.userName %></h1>
     </div>
     <% if(user && user._id.equals(recipe.user)) { %>
       <div>
