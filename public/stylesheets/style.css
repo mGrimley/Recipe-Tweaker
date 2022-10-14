@@ -122,3 +122,10 @@ body > nav {
   padding: 10px 25px;
   font-size: 30px;
 }
+
+.flex-container.show-recipe {
+  color: white;
+  background-color: var(--recipe-bg);
+  padding: 75px;
+  margin: 50px 100px;
+}
