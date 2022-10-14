@@ -37,7 +37,7 @@ const recipeSchema = new Schema({
     },
     mainCategory: {
         type: String,
-        enum: ['Breakfast', 'Second Breakfast', 'Luncheon', 'Dinner', 'Supper']
+        enum: ['Breakfast', 'Second Breakfast', 'Elevensies', 'Luncheon', 'Dinner', 'Supper']
     },
     prepTime: {
         type: Number,
