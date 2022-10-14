@@ -9,5 +9,6 @@ router.get('/', recipesCtrl.index);
 router.get('/new', isLoggedIn, recipesCtrl.new);
 router.post('/', isLoggedIn, recipesCtrl.create)
 router.get('/:id', recipesCtrl.show);
+router.delete('/:id', isLoggedIn, recipesCtrl.delete)
 
 module.exports = router;

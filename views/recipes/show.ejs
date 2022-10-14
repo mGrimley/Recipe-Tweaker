@@ -7,6 +7,13 @@
   <div>Cook Time: <%= recipe.cookTime %> minute<% if(recipe.cookTime > 1) {'s'} %></div>
   <div>Ingredients: <%= recipe.ingredients %></div>
   <div>Steps: <%= recipe.steps %></div>
+  <% if(user && user._id.equals(recipe.user)) { %>
+    <div>
+        <form action="/recipes/<%= recipe._id %>?_method=DELETE">
+            <button type="submit">Delete Recipe</button>
+        </form>
+    </div>
+  <% } %>
 </div>
 
 <%- include('../partials/footer') %>
