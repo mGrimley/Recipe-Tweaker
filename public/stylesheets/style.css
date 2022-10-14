@@ -93,9 +93,9 @@ body > nav {
   background-color: var(--recipe-bg);
   color: white;
   border-radius: calc(var(--recipe-card-height) / 2);
-  padding: 10px 150px;
+  padding: 10px 50px;
   text-decoration: none;
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .recipe-preview:hover {

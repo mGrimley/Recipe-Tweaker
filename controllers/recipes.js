@@ -28,8 +28,8 @@ function create(req, res) {
     recipe.userAvatar = req.user.avatar
 
     recipe.title = recipe.title.trim();
-    recipe.steps[0] = recipe.steps[0].trim();
-    recipe.ingredients[0] = recipe.ingredients[0].trim();
+    recipe.steps = recipe.steps[0].trim();
+    recipe.ingredients = recipe.ingredients[0].trim();
     
     recipe.steps = recipe.steps[0].split(/\s*, \s*/);
     recipe.ingredients = recipe.ingredients[0].split(/\s*, \s*/);

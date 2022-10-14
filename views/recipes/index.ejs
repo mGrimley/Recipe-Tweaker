@@ -3,7 +3,7 @@
 <div class="flex-container">
   <h1 class="title-card"><%= title %></h1>
   <% recipes.forEach(function(r) { %>
-    <a href="/recipes/<%= r._id %>" class="recipe-preview"><%= r.title %></a>
+    <a href="/recipes/<%= r._id %>" class="recipe-preview"><%= r.title %> - <%= r.mainCategory %></a>
   <% }) %>
 </div>
 
