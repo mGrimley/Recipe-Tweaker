@@ -128,4 +128,5 @@ body > nav {
   background-color: var(--recipe-bg);
   padding: 75px;
   margin: 50px 100px;
+  font-size: 20px;
 }

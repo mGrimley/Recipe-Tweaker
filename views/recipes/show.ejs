@@ -31,7 +31,10 @@
           <% }) %>
         </ol>
       </div>
-    <% } %>
+      <% } %>
+    <div>
+      <h1>Posted by <%= recipe.userName %></h1>
+    </div>
     <% if(user && user._id.equals(recipe.user)) { %>
       <div>
         <form action="/recipes/<%= recipe._id %>/edit" method="GET">
@@ -45,31 +48,6 @@
       </div>
     <% } %>
   </div>
-  <!-- <div>
-    <h1 class="tweak-card">Tweaks</h1>
-  </div>
-  <!-- Display tweaks, if any --
-  <% if(recipe.tweaks.length) { %>
-    <% recipe.tweaks.forEach(function(t) { %>
-      <div>
-        <img alt="avatar" src="<%= t.userAvatar %>" referrerpolicy="no-referrer" ><%= t.userName %>
-        <div><%= t.comment %></div>
-      </div>
-    <% }) %>
-  <% } %>
-
-  <!-- Add a tweak --
-  <% if(user){ %>
-    <div>
-      <form method="POST" action="/recipes/<%= recipe._id %>/tweaks">
-        <div>
-          <label>Tweak</label>
-          <input type="text" name="comment" placeholder="Your tweak here...">
-          <input type="submit" value="Add Tweak" class="btn">
-        </div>
-      </form>
-    </div>
-  <% } %> -->
 </div>
 
 <%- include('../partials/footer') %>
