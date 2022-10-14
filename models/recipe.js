@@ -30,7 +30,7 @@ const recipeSchema = new Schema({
         ref: 'User',
         required: true,
     },
-    username: String,
+    userName: String,
     userAvatar: String,
     title: {
         type: String,
@@ -47,8 +47,8 @@ const recipeSchema = new Schema({
         type: Number,
         min: 0,
     },
-    ingredients: String,
-    steps: String,
+    ingredients: [String],
+    steps: [String],
     tweaks: [tweaksSchema],
 }, {
     timestamps: true,
